@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class BlogPost extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         {this.props.children}
-      </div>
+      </React.Fragment>
     );
   }
 }
