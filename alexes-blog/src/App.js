@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grommet } from 'grommet';
 
 import './App.css';
+import BlogPost from './BlogPost';
 
 const theme = {
   global: {
@@ -17,7 +18,9 @@ class App extends Component {
   render() {
     return (
       <Grommet theme={theme}>
-      Test web page
+        <BlogPost>
+          <p>This is a test!!!</p>
+        </BlogPost>
       </Grommet>
     );
   }
