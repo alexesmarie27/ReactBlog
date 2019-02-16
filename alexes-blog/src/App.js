@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, Grommet, Image, Paragraph, Text } from 'grommet';
+import { Box, Grid, Grommet, Image, Paragraph } from 'grommet';
 
 import './App.css';
 import BlogPost from './BlogPost';
@@ -18,7 +18,24 @@ class App extends Component {
   render() {
     return (
       <Grommet theme={theme} id="grommet">
-        <BlogPost>
+        <Grid
+          style={{height: '100vh'}}
+          rows={['20%', '80%']}
+          columns={['30%', '70%']}
+          gap="small"
+          areas={[
+            { name: 'header', start: [0, 0], end: [1, 0] },
+            { name: 'nav', start: [0, 1], end: [0, 1] },
+            { name: 'main', start: [1, 1], end: [1, 1] },
+          ]}
+        >
+          <Box gridArea="header" background="brand" />
+          <Box gridArea="nav" background="light-5" />
+          <Box gridArea="main" background="light-2" />
+        </Grid>
+
+
+        {/* <BlogPost>
           <Paragraph className="blog-post-paragraph" margin="large">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -47,7 +64,7 @@ class App extends Component {
           and more recently with desktop publishing software like Aldus
           PageMaker including versions of Lorem Ipsum.
           </Paragraph>
-        </BlogPost>
+        </BlogPost> */}
       </Grommet>
     );
   }
